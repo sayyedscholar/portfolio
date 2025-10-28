@@ -14,6 +14,12 @@ export const metadata: Metadata = {
   description: 'Portfolio of Amaanullah Sayyed - Experienced Software Developer specializing in Full Stack Development with Java, PHP, and .NET',
   keywords: 'Software Developer, Full Stack Developer, Java Developer, PHP Developer, Web Developer, Mumbai, Dubai',
   authors: [{ name: 'Amaanullah Sayyed' }],
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+    ],
+    apple: '/favicon.svg',
+  },
   openGraph: {
     title: 'Amaanullah Sayyed | Software Developer',
     description: 'Experienced Software Developer with expertise in Java, PHP, C#, and modern web technologies',
