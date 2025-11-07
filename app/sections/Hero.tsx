@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { ArrowDown, Github, Linkedin, Mail, Instagram, Facebook } from 'lucide-react'
 import { useLanguage } from '../lib/LanguageContext'
+import Image from 'next/image'
 
 export default function Hero() {
   const { t } = useLanguage()
@@ -30,15 +31,19 @@ export default function Hero() {
               <div className="absolute -inset-1 bg-gradient-to-r from-primary-500 via-accent-500 to-primary-600 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
               
               {/* Profile image container */}
-              <div className="relative">
-                <img
-                  src="/profile.jpg"
-                  alt="Amaanullah Sayyed"
-                  className="relative w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-white dark:border-gray-900 shadow-xl group-hover:scale-105 transition-transform duration-300"
-                />
-                {/* Glow effect */}
-                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary-500/20 to-accent-500/20 group-hover:from-primary-500/40 group-hover:to-accent-500/40 transition-all duration-300"></div>
-              </div>
+              <div className="relative w-32 h-32 md:w-40 md:h-40 aspect-square">
+  <Image
+    src="/profile.jpg"
+    alt="Amaanullah Sayyed - Software Developer specializing in Full Stack Development"
+    width={160}
+    height={160}
+    priority
+    className="w-full h-full rounded-full object-cover border-4 border-white dark:border-gray-900 shadow-xl group-hover:scale-105 transition-transform duration-300"
+  />
+  {/* Glow effect */}
+  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary-500/20 to-accent-500/20 group-hover:from-primary-500/40 group-hover:to-accent-500/40 transition-all duration-300"></div>
+</div>
+
             </div>
           </motion.div>
 
@@ -142,7 +147,7 @@ export default function Hero() {
             transition={{ duration: 0.5, delay: 1.0 }}
             className="animate-bounce"
           >
-            <a href="#about">
+            <a href="#about" title="Scroll to About section" aria-label="Scroll to About section">
               <ArrowDown className="w-8 h-8 mx-auto text-gray-400 dark:text-gray-600" />
             </a>
           </motion.div>

@@ -65,14 +65,14 @@ export default function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-white dark:bg-gray-900 rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2"
+              className="bg-white dark:bg-gray-900 rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-[1.02] group"
             >
-              <h3 className="text-xl font-bold mb-4 gradient-text">{item.category}</h3>
+              <h3 className="text-xl font-bold mb-4 gradient-text group-hover:scale-105 transition-transform duration-300">{item.category}</h3>
               <div className="flex flex-wrap gap-2">
                 {item.skills.map((skill, skillIndex) => (
                   <span
                     key={skillIndex}
-                    className="px-3 py-1.5 bg-gradient-to-r from-primary-50 to-accent-50 dark:from-primary-900/30 dark:to-accent-900/30 text-gray-700 dark:text-gray-300 rounded-lg text-sm font-medium border border-primary-200 dark:border-primary-700"
+                    className="px-3 py-1.5 bg-gradient-to-r from-primary-50 to-accent-50 dark:from-primary-900/30 dark:to-accent-900/30 text-gray-700 dark:text-gray-300 rounded-lg text-sm font-medium border border-primary-200 dark:border-primary-700 hover:scale-110 hover:shadow-md transition-all duration-200 cursor-default"
                   >
                     {skill}
                   </span>

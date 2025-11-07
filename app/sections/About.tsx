@@ -62,7 +62,7 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <h3 className="text-2xl font-bold mb-4">{t('about.myJourney')}</h3>
+            <h2 className="text-2xl font-bold mb-4">{t('about.myJourney')}</h2>
             <p className="text-gray-600 dark:text-gray-300 mb-4">
               {t('about.description1')}
             </p>
@@ -87,7 +87,7 @@ export default function About() {
                 className="p-6 bg-white dark:bg-gray-900 rounded-xl shadow-lg hover:shadow-xl transition-shadow"
               >
                 <item.icon className="w-10 h-10 text-primary-500 mb-3" />
-                <h4 className="font-semibold mb-2">{item.title}</h4>
+                <h3 className="font-semibold mb-2">{item.title}</h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400">{item.description}</p>
               </div>
             ))}
@@ -101,7 +101,7 @@ export default function About() {
           transition={{ duration: 0.5, delay: 0.6 }}
           className="bg-gradient-to-r from-primary-500 to-accent-500 rounded-2xl p-8 text-white text-center"
         >
-          <h3 className="text-2xl font-bold mb-4">{t('about.coreQualities')}</h3>
+          <h2 className="text-2xl font-bold mb-4">{t('about.coreQualities')}</h2>
           <div className="flex flex-wrap justify-center gap-4">
             {coreQualities.map((quality) => (
               <span

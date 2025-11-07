@@ -14,7 +14,9 @@ export default function Projects() {
       title: 'Fahinds ERP & CRM Solution',
       platform: 'PHP Platform',
       teamSize: 6,
-      description: 'Comprehensive enterprise resource planning and customer relationship management system',
+      description: 'Comprehensive enterprise resource planning and customer relationship management system built with PHP, MySQL, and modern web technologies. Handles complete business operations from lead management to payroll processing.',
+      demoUrl: 'https://fahinds.com',
+      githubUrl: null, // Private repository
       features: [
         'Dashboard & Analytics',
         'Accounts & Payroll Management',
@@ -36,7 +38,9 @@ export default function Projects() {
       title: 'Fahinds ERP & CRM Solution',
       platform: 'Java Platform',
       teamSize: 5,
-      description: 'Java-based enterprise solution for business management',
+      description: 'Java-based enterprise solution for business management using JSP, Servlets, and MySQL. Features robust architecture with comprehensive reporting and document management capabilities.',
+      demoUrl: 'https://fahinds.net',
+      githubUrl: null, // Private repository
       features: [
         'Accounts Management',
         'Payroll Management',
@@ -55,7 +59,9 @@ export default function Projects() {
       title: 'Fahinds Car Mall Management',
       platform: '.NET Platform (Desktop)',
       teamSize: 3,
-      description: 'Desktop application with cloud support for car dealership management',
+      description: 'Desktop application with cloud support for car dealership management built with C# and WPF. Features automatic cloud synchronization, comprehensive reporting with Crystal Reports, and multi-database support.',
+      demoUrl: null,
+      githubUrl: null, // Private repository
       features: [
         'Customer Management',
         'Old Car Sales Records',
@@ -73,7 +79,9 @@ export default function Projects() {
       title: 'Bansuri Utsav Online Ticketing System',
       platform: 'PHP Platform',
       teamSize: 3,
-      description: 'Online ticket booking platform for resellers',
+      description: 'Online ticket booking platform for resellers with real-time quota management and automated accounting. Built with PHP, MySQL, and Bootstrap for responsive design.',
+      demoUrl: null,
+      githubUrl: null, // Private repository
       features: [
         'Online Ticket Booking',
         'Reseller Dashboard',
@@ -88,7 +96,9 @@ export default function Projects() {
       title: 'Accounting Software',
       platform: 'Java Platform',
       teamSize: 3,
-      description: 'Comprehensive accounting management system',
+      description: 'Comprehensive accounting management system with payroll processing and financial reporting. Built with JSP, Servlets, and MySQL with AJAX for dynamic updates.',
+      demoUrl: null,
+      githubUrl: null, // Private repository
       features: [
         'Accounts Management',
         'Payroll Management',
@@ -129,7 +139,7 @@ export default function Projects() {
             >
               <div className="p-6 md:p-8">
                 <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
-                  <div>
+                  <div className="flex-1">
                     <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
                     <div className="flex flex-wrap gap-2 mb-2">
                       <span className="px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 rounded-full text-sm font-medium">
@@ -138,6 +148,30 @@ export default function Projects() {
                       <span className="px-3 py-1 bg-accent-100 dark:bg-accent-900/30 text-accent-700 dark:text-accent-300 rounded-full text-sm font-medium">
                         Team of {project.teamSize}
                       </span>
+                    </div>
+                    <div className="flex flex-wrap gap-2 mt-3">
+                      {project.demoUrl && (
+                        <a
+                          href={project.demoUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 px-3 py-1.5 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-lg text-sm font-medium hover:shadow-md transition-all"
+                        >
+                          <ExternalLink className="w-3.5 h-3.5" />
+                          Live Demo
+                        </a>
+                      )}
+                      {project.githubUrl && (
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 px-3 py-1.5 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg text-sm font-medium hover:shadow-md transition-all"
+                        >
+                          <Code2 className="w-3.5 h-3.5" />
+                          GitHub
+                        </a>
+                      )}
                     </div>
                   </div>
                   <button

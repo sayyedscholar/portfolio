@@ -5,6 +5,7 @@ import { Mail, Phone, MapPin, Send } from 'lucide-react'
 import { useForm } from 'react-hook-form'
 import { useState } from 'react'
 import { useLanguage } from '../lib/LanguageContext'
+import emailjs from '@emailjs/browser'
 
 export default function Contact() {
   const { t } = useLanguage()
@@ -16,13 +17,45 @@ export default function Contact() {
     setIsSubmitting(true)
     setSubmitMessage('')
     
-    // Simulate form submission
-    setTimeout(() => {
-      console.log('Form data:', data)
-      setSubmitMessage(t('contact.form.successMessage'))
+    try {
+      // Check if EmailJS credentials are configured
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+
+      if (!serviceId || !templateId || !publicKey) {
+        // Fallback: Log to console if EmailJS is not configured
+        console.log('EmailJS not configured. Form data:', data)
+        setSubmitMessage('⚠️ Email service not configured. Please set up EmailJS credentials in .env.local')
+        setIsSubmitting(false)
+        reset()
+        return
+      }
+
+      // Send email using EmailJS
+      const result = await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          from_name: data.name,
+          from_email: data.email,
+          subject: data.subject,
+          message: data.message,
+          to_name: 'Amaanullah Sayyed',
+        },
+        publicKey
+      )
+
+      if (result.status === 200) {
+        setSubmitMessage(t('contact.form.successMessage'))
+        reset()
+      }
+    } catch (error) {
+      console.error('EmailJS Error:', error)
+      setSubmitMessage('❌ Failed to send message. Please try again or contact directly via email.')
+    } finally {
       setIsSubmitting(false)
-      reset()
-    }, 1500)
+    }
   }
 
   const contactInfo = [
@@ -201,7 +234,11 @@ export default function Contact() {
               </button>
 
               {submitMessage && (
-                <div className="p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg text-green-700 dark:text-green-300">
+                <div className={`p-4 rounded-lg border ${
+                  submitMessage.includes('❌') || submitMessage.includes('⚠️')
+                    ? 'bg-red-50 dark:bg-red-900/20 border-red-200 dark:border-red-800 text-red-700 dark:text-red-300'
+                    : 'bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-800 text-green-700 dark:text-green-300'
+                }`}>
                   {submitMessage}
                 </div>
               )}
