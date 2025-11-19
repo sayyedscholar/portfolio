@@ -3,143 +3,208 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-  }
+    :root {
+        --background: 0 0% 100%;
+        --foreground: 222.2 84% 4.9%;
+    }
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-  }
+    .dark {
+        --background: 222.2 84% 4.9%;
+        --foreground: 210 40% 98%;
+    }
 }
 
 @layer base {
-  body {
-    @apply bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300;
-  }
+    body {
+        @apply text-gray-900 dark:text-gray-100 transition-colors duration-300;
+        position: relative;
+        background-color: white;
+    }
+
+    .dark body {
+        background-color: rgb(17, 24, 39);
+    }
+
+    /* Global background pattern - Grid */
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        pointer-events: none;
+        opacity: 0.08;
+        background-image:
+            linear-gradient(rgba(99, 102, 241, 0.15) 1px, transparent 1px),
+            linear-gradient(
+                90deg,
+                rgba(99, 102, 241, 0.15) 1px,
+                transparent 1px
+            );
+        background-size: 50px 50px;
+    }
+
+    .dark body::before {
+        opacity: 0.12;
+    }
+
+    /* Global background pattern - Code keywords */
+    body::after {
+        content: "{ } </> [ ] ( ) => function() console.log() const let var class extends async await import export module require useState useEffect return render if else for while try catch new this super public private protected static void int string boolean array object promise then catch finally break continue switch case default";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        pointer-events: none;
+        font-family: "Courier New", monospace;
+        font-size: 14px;
+        line-height: 2.8;
+        color: rgba(99, 102, 241, 0.06);
+        word-wrap: break-word;
+        padding: 20px;
+        overflow: hidden;
+        white-space: pre-wrap;
+    }
+
+    .dark body::after {
+        color: rgba(99, 102, 241, 0.1);
+    }
+
+    /* Ensure main content is above background */
+    main,
+    header,
+    footer,
+    section {
+        position: relative;
+        z-index: 1;
+    }
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+    .text-balance {
+        text-wrap: balance;
+    }
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
+    width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-gray-100 dark:bg-gray-800;
+    @apply bg-gray-100 dark:bg-gray-800;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-primary-400 dark:bg-primary-600 rounded-full;
+    @apply bg-primary-400 dark:bg-primary-600 rounded-full;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-primary-500 dark:bg-primary-500;
+    @apply bg-primary-500 dark:bg-primary-500;
 }
 
 /* Smooth scroll */
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 /* RTL Support */
 [dir="rtl"] {
-  direction: rtl;
+    direction: rtl;
 }
 
 [dir="ltr"] {
-  direction: ltr;
+    direction: ltr;
 }
 
 /* Gradient text */
 .gradient-text {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-500 via-accent-500 to-primary-600;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-500 via-accent-500 to-primary-600;
 }
 
 /* Glass effect */
 .glass {
-  @apply bg-white/10 dark:bg-gray-900/10 backdrop-blur-lg border border-white/20;
+    @apply bg-white/10 dark:bg-gray-900/10 backdrop-blur-lg border border-white/20;
 }
 
 /* Smooth hover animations */
 @layer utilities {
-  .hover-lift {
-    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-xl;
-  }
-  
-  .hover-glow {
-    @apply transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/50;
-  }
-  
-  .hover-scale {
-    @apply transition-transform duration-300 hover:scale-105;
-  }
+    .hover-lift {
+        @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-xl;
+    }
+
+    .hover-glow {
+        @apply transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/50;
+    }
+
+    .hover-scale {
+        @apply transition-transform duration-300 hover:scale-105;
+    }
 }
 
 /* Fade in animation */
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .animate-fade-in {
-  animation: fadeIn 0.6s ease-out;
+    animation: fadeIn 0.6s ease-out;
 }
 
 /* Slide in from left */
 @keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .animate-slide-in-left {
-  animation: slideInLeft 0.6s ease-out;
+    animation: slideInLeft 0.6s ease-out;
 }
 
 /* Slide in from right */
 @keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .animate-slide-in-right {
-  animation: slideInRight 0.6s ease-out;
+    animation: slideInRight 0.6s ease-out;
 }
 
 /* Pulse glow effect */
 @keyframes pulseGlow {
-  0%, 100% {
-    box-shadow: 0 0 20px rgba(var(--primary-rgb), 0.3);
-  }
-  50% {
-    box-shadow: 0 0 30px rgba(var(--primary-rgb), 0.6);
-  }
+    0%,
+    100% {
+        box-shadow: 0 0 20px rgba(var(--primary-rgb), 0.3);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(var(--primary-rgb), 0.6);
+    }
 }
 
 .animate-pulse-glow {
-  animation: pulseGlow 2s ease-in-out infinite;
+    animation: pulseGlow 2s ease-in-out infinite;
 }

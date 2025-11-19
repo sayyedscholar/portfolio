@@ -1,88 +1,90 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
-import { Briefcase, GraduationCap, Award, ExternalLink } from 'lucide-react'
-import { useLanguage } from '../lib/LanguageContext'
+import { motion } from "framer-motion";
+import { Briefcase, GraduationCap, Award, ExternalLink } from "lucide-react";
+import { useLanguage } from "../lib/LanguageContext";
 
 interface TimelineItem {
-  year: string
-  icon: any
-  title: string
-  organization: string
-  description: string
-  website?: string
-  altWebsite?: string
-  ecomSite?: string
-  highlights: string[]
+  year: string;
+  icon: any;
+  title: string;
+  organization: string;
+  description: string;
+  website?: string;
+  altWebsite?: string;
+  ecomSite?: string;
+  highlights: string[];
 }
 
 export default function Journey() {
-  const { t } = useLanguage()
+  const { t } = useLanguage();
   const timeline: TimelineItem[] = [
     {
-      year: '2022 - Present',
+      year: "2022 - Present",
       icon: Briefcase,
-      title: 'Software Developer',
-      organization: 'Afri ERP Investment Zambia Limited',
-      description: 'Leading development of enterprise solutions for African markets',
-      website: 'https://afrierp.com',
-      ecomSite: 'https://shop.afrierp.com',
+      title: "Software Developer",
+      organization: "Afri ERP Investment Zambia Limited",
+      description:
+        "Leading development of enterprise solutions for African markets",
+      website: "https://afrierp.com",
+      ecomSite: "https://shop.afrierp.com",
       highlights: [
-        'Built and deployed afrierp.com main website from scratch',
-        'Developed shop.afrierp.com e-commerce platform',
-        'Created ZRA Smart Invoice API integration - Zambia Revenue Authority government e-invoicing system',
-        'Designed and implemented complete ERP solution for inventory, sales, and accounting management',
-        'Developed real-time tax compliance and reporting features for Zambian market'
-      ]
+        "Built and deployed afrierp.com main website from scratch",
+        "Developed shop.afrierp.com e-commerce platform",
+        "Created ZRA Smart Invoice API integration - Zambia Revenue Authority government e-invoicing system",
+        "Designed and implemented complete ERP solution for inventory, sales, and accounting management",
+        "Developed real-time tax compliance and reporting features for Zambian market",
+      ],
     },
     {
-      year: '2017 - 2022',
+      year: "2017 - 2022",
       icon: Briefcase,
-      title: 'Software Developer',
-      organization: 'Fahinds Solutions',
-      description: 'Full-stack development of enterprise management systems',
-      website: 'https://fahinds.com',
-      altWebsite: 'https://fahinds.net',
+      title: "Software Developer",
+      organization: "Fahinds Solutions",
+      description: "Full-stack development of enterprise management systems",
+      website: "https://fahinds.com",
+      altWebsite: "https://fahinds.net",
       highlights: [
-        'Built and launched fahinds.com and fahinds.net websites',
-        'Developed comprehensive ERP & CRM solutions for multiple platforms (PHP & Java)',
-        'Created complete car dealership management system with inventory tracking',
-        'Built payroll and HR management modules with employee attendance system',
-        'Designed and implemented custom reporting and analytics dashboards'
-      ]
+        "Built and launched fahinds.com and fahinds.net websites",
+        "Developed comprehensive ERP & CRM solutions for multiple platforms (PHP & Java)",
+        "Created complete car dealership management system with inventory tracking",
+        "Built payroll and HR management modules with employee attendance system",
+        "Designed and implemented custom reporting and analytics dashboards",
+      ],
     },
     {
-      year: '2013 - 2017',
+      year: "2013 - 2017",
       icon: Briefcase,
-      title: 'Software Developer',
-      organization: 'Tetrainfotech LLC - Dubai, UAE',
-      description: 'Working with Associated Partner Asma Technology Pvt Ltd - Mumbai',
-      website: 'https://tetrainfotech.com',
+      title: "Software Developer",
+      organization: "Tetrainfotech LLC - Dubai, UAE",
+      description:
+        "Working with Associated Partner Asma Technology Pvt Ltd - Mumbai",
+      website: "https://tetrainfotech.com",
       highlights: [
-        'Built and deployed tetrainfotech.com corporate website',
-        'Developed enterprise web applications for UAE and Indian markets',
-        'Collaborated with international teams across Dubai and Mumbai',
-        'Created complex business management solutions from scratch',
-        'Led full project lifecycle from requirements gathering to deployment'
-      ]
+        "Built and deployed tetrainfotech.com corporate website",
+        "Developed enterprise web applications for UAE and Indian markets",
+        "Collaborated with international teams across Dubai and Mumbai",
+        "Created complex business management solutions from scratch",
+        "Led full project lifecycle from requirements gathering to deployment",
+      ],
     },
     {
-      year: '2012',
-      icon: GraduationCap,
-      title: 'Bachelor\'s Degree in Information Technology',
-      organization: 'Mumbai University',
-      description: 'Completed undergraduate degree in IT',
-      highlights: []
-    },
-    {
-      year: '2013',
+      year: "2013",
       icon: Award,
-      title: 'Web Component Developer Certification',
-      organization: 'NIIT',
-      description: 'JSP and Servlets - 6 Month Course',
-      highlights: []
-    }
-  ]
+      title: "Web Component Developer Certification",
+      organization: "NIIT",
+      description: "JSP and Servlets - 6 Month Course",
+      highlights: [],
+    },
+    {
+      year: "2012",
+      icon: GraduationCap,
+      title: "Bachelor's Degree in Information Technology",
+      organization: "Mumbai University",
+      description: "Completed undergraduate degree in IT",
+      highlights: [],
+    },
+  ];
 
   return (
     <section id="journey" className="py-20 px-4">
@@ -94,10 +96,11 @@ export default function Journey() {
           transition={{ duration: 0.5 }}
         >
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">
-            {t('journey.title')} <span className="gradient-text">{t('journey.titleHighlight')}</span>
+            {t("journey.title")}{" "}
+            <span className="gradient-text">{t("journey.titleHighlight")}</span>
           </h2>
           <p className="text-center text-gray-600 dark:text-gray-400 mb-16 max-w-2xl mx-auto">
-            {t('journey.subtitle')}
+            {t("journey.subtitle")}
           </p>
         </motion.div>
 
@@ -130,7 +133,7 @@ export default function Journey() {
                     <p className="text-primary-600 dark:text-primary-400 font-medium mb-2">
                       {item.organization}
                     </p>
-                    
+
                     {/* Website Links */}
                     {item.website && (
                       <div className="flex flex-wrap gap-2 mb-3">
@@ -167,7 +170,7 @@ export default function Journey() {
                         )}
                       </div>
                     )}
-                    
+
                     <p className="text-gray-600 dark:text-gray-400 mb-3">
                       {item.description}
                     </p>
@@ -178,10 +181,13 @@ export default function Journey() {
                         </h4>
                         <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
                           {item.highlights.map((highlight, i) => {
-                            const isZRA = highlight.includes('ZRA Smart Invoice')
+                            const isZRA =
+                              highlight.includes("ZRA Smart Invoice");
                             return (
                               <li key={i} className="flex items-start gap-2">
-                                <span className="text-primary-500 mt-1 flex-shrink-0">•</span>
+                                <span className="text-primary-500 mt-1 flex-shrink-0">
+                                  •
+                                </span>
                                 <span className="flex-1">
                                   {highlight}
                                   {isZRA && (
@@ -191,7 +197,7 @@ export default function Journey() {
                                   )}
                                 </span>
                               </li>
-                            )
+                            );
                           })}
                         </ul>
                       </div>
@@ -204,5 +210,5 @@ export default function Journey() {
         </div>
       </div>
     </section>
-  )
+  );
 }

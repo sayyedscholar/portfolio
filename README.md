@@ -4,13 +4,20 @@ A modern, responsive portfolio website built with Next.js, React, TypeScript, an
 
 ## ✨ Features
 
-- 🎨 Modern, clean, and colorful design with smooth animations
-- 🌓 Dark/Light mode toggle with persistent preferences
+### 🎨 Visual Effects
+- 🌈 **Animated Profile Photo** with rotating rainbow ring and floating particles
+- 💫 **25+ Floating Technology Icons** visible throughout the entire page
+- 🚀 **Programming-Themed Loading Screen** with typing code animations
+- 🎭 **Smooth Animations** with Framer Motion (60 FPS performance)
+- 🌓 **Dark/Light Mode** toggle with persistent preferences
+
+### 🌐 Internationalization
 - 🌍 Multi-language support (English, Hindi, Urdu, Arabic)
 - 📝 RTL (Right-to-Left) support for Arabic and Urdu
+
+### 💻 Technical Features
 - 📱 Fully responsive design for all devices
 - ⚡ Performance optimized with Next.js Image component
-- 🎭 Smooth animations and transitions with Framer Motion
 - 📧 Functional contact form with EmailJS integration
 - 🔍 SEO optimized with meta tags and Open Graph
 - ♿ Accessibility enhanced with ARIA labels and semantic HTML
@@ -18,11 +25,12 @@ A modern, responsive portfolio website built with Next.js, React, TypeScript, an
 
 ## 📋 Sections
 
-- **Hero** - Introduction with animated profile picture and social links
+- **Loading Screen** - Programming-themed loader with cycling tech icons and typing code effect
+- **Hero** - Animated profile with rotating ring, floating particles, and 25+ technology icons
 - **About** - Professional background, journey, and core qualities
 - **Journey** - Interactive timeline of experience and education with company links
 - **Skills** - Technical expertise organized by category with hover effects
-- **Projects** - Featured projects with live demos, detailed descriptions, and tech stacks
+- **Projects** - Featured projects including Afri Investment (Senior role), with live demos and tech stacks
 - **Contact** - Contact information and functional email form
 
 ## 🛠️ Tech Stack
@@ -195,6 +203,14 @@ Edit translation files in `app/i18n/`:
 - `ur.ts` - Urdu
 - `ar.ts` - Arabic
 
+## 📚 Documentation
+
+Detailed documentation is available in the `/docs` folder:
+- **HERO_ENHANCEMENT.md** - Animated profile photo and floating technologies
+- **COOL_LOADING_SCREEN.md** - Programming-themed loading screen
+- **ENHANCED_VISIBILITY_UPDATE.md** - Technology icons and global visibility
+- **LAUNCH_CHECKLIST.md** - Pre-launch checklist and testing guide
+
 ## 📊 SEO Optimization
 
 The portfolio includes:
@@ -235,8 +251,32 @@ The portfolio includes:
 
 - **Email**: sayyedscholar@gmail.com
 - **Phone**: +91 9503240195
+- **GitHub**: [@sayyedscholar](https://github.com/sayyedscholar)
+- **LinkedIn**: [Amaanullah Sayyed](https://in.linkedin.com/in/amaanullah-sayyed-aa320ab0)
 - **Location**: Mumbai, India | Dubai, UAE
+
+## 🌟 Special Features
+
+### Animated Hero Section
+- Rotating rainbow ring around profile photo (360° every 20 seconds)
+- 8 floating particles orbiting the photo
+- 25+ technology icons floating across the page with smooth animations
+- Code symbols (`</>`, `{}`, `[]`, `()`) decorating the background
+- All animations optimized for 60 FPS performance
+
+### Loading Screen
+- Cycles through 8 major technologies (PHP, Java, JavaScript, React, Flutter, Node.js, MySQL, Git)
+- Real-time code typing animation with developer messages
+- Technology grid highlighting current tech
+- Gradient progress bar with shimmer effect
+- Floating code symbols and animated corner brackets
+
+### Global Technology Visibility
+- Technologies visible throughout entire page (not just hero section)
+- Fixed position background that follows scrolling
+- Each technology has its own brand-accurate icon and color
+- Creates an immersive, professional experience
 
 ---
 
-Built with ❤️ using Next.js and TailwindCSS
+Built with ❤️ using Next.js, TypeScript, and TailwindCSS
