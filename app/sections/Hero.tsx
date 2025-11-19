@@ -314,7 +314,7 @@ export default function Hero() {
               delay: index * 0.5,
               ease: "easeInOut",
             }}
-            className={`absolute ${item.position} ${item.size} ${item.rotation} font-mono text-primary-600 dark:text-primary-400 font-bold`}
+            className={`absolute ${item.position} ${item.size} ${item.rotation} font-mono text-primary-600 dark:text-primary-400 font-bold pointer-events-none`}
           >
             {item.symbol}
           </motion.div>
@@ -338,7 +338,7 @@ export default function Hero() {
                 delay: tech.delay * 0.3,
                 ease: "easeInOut",
               }}
-              className={`absolute ${tech.position} flex flex-col items-center gap-2`}
+              className={`absolute ${tech.position} flex flex-col items-center gap-2 pointer-events-none`}
               style={{
                 textShadow: "0 2px 10px rgba(0,0,0,0.2)",
               }}
@@ -364,7 +364,7 @@ export default function Hero() {
             repeat: Infinity,
             ease: "linear",
           }}
-          className="absolute top-[15%] right-[35%] w-16 h-16 border-2 border-primary-300 dark:border-primary-600 opacity-30 rounded-lg"
+          className="absolute top-[15%] right-[35%] w-16 h-16 border-2 border-primary-300 dark:border-primary-600 opacity-30 rounded-lg pointer-events-none"
         />
         <motion.div
           animate={{
@@ -375,7 +375,7 @@ export default function Hero() {
             repeat: Infinity,
             ease: "linear",
           }}
-          className="absolute bottom-[20%] left-[35%] w-20 h-20 border-2 border-accent-300 dark:border-accent-600 opacity-30 rounded-full"
+          className="absolute bottom-[20%] left-[35%] w-20 h-20 border-2 border-accent-300 dark:border-accent-600 opacity-30 rounded-full pointer-events-none"
         />
         <motion.div
           animate={{
@@ -387,7 +387,7 @@ export default function Hero() {
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          className="absolute top-[55%] left-[40%] w-32 h-32 border border-primary-400 dark:border-primary-500 rounded-full"
+          className="absolute top-[55%] left-[40%] w-32 h-32 border border-primary-400 dark:border-primary-500 rounded-full pointer-events-none"
         />
       </div>
 
