@@ -208,3 +208,28 @@ html {
 .animate-pulse-glow {
     animation: pulseGlow 2s ease-in-out infinite;
 }
+
+/* Prevent decorative/backdrop overlays from blocking clicks */
+.decorative-overlay,
+.app-overlay,
+.backdrop,
+[data-overlay],
+.backdrop-blur-sm {
+  pointer-events: none !important;
+}
+
+/* Ensure anchors and their children remain clickable above overlays */
+a,
+a * {
+  position: relative;
+  z-index: 50;
+  pointer-events: auto !important;
+}
+
+/* Optional: ensure buttons remain interactive */
+button,
+button * {
+  position: relative;
+  z-index: 50;
+  pointer-events: auto !important;
+}
