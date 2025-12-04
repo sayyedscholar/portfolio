@@ -215,21 +215,47 @@ html {
 .backdrop,
 [data-overlay],
 .backdrop-blur-sm {
-  pointer-events: none !important;
+    pointer-events: none !important;
 }
 
 /* Ensure anchors and their children remain clickable above overlays */
 a,
 a * {
-  position: relative;
-  z-index: 50;
-  pointer-events: auto !important;
+    position: relative;
+    z-index: 50;
+    pointer-events: auto !important;
 }
 
 /* Optional: ensure buttons remain interactive */
 button,
 button * {
-  position: relative;
-  z-index: 50;
-  pointer-events: auto !important;
+    position: relative;
+    z-index: 50;
+    pointer-events: auto !important;
+}
+
+/* Ensure form inputs and textareas remain clickable */
+input,
+input * {
+    position: relative;
+    z-index: 50;
+    pointer-events: auto !important;
+}
+
+textarea,
+textarea * {
+    position: relative;
+    z-index: 50;
+    pointer-events: auto !important;
+}
+
+label {
+    position: relative;
+    z-index: 50;
+    pointer-events: auto !important;
+}
+
+/* Form wrapper should be interactive */
+form {
+    pointer-events: auto !important;
 }

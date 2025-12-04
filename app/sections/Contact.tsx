@@ -162,6 +162,7 @@ export default function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.4 }}
             className="bg-white dark:bg-gray-900 rounded-xl shadow-lg p-8"
+            style={{ pointerEvents: "auto" }}
           >
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
               <div>

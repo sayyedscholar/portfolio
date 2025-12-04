@@ -97,7 +97,7 @@ export default function Loading() {
   return (
     <motion.div
       initial={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
+      exit={{ opacity: 0, pointerEvents: "none" }}
       transition={{ duration: 0.5 }}
       className="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"
     >
